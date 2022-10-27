@@ -1,0 +1,16 @@
+{
+  "name": "draft-flow",
+  "version": "1.0.0",
+  "description": "手绘风格流程图",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/towersxu/rough-flow"
+  },
+  "author": "xutao",
+  "license": "ISC"
+}
+

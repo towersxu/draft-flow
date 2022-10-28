@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "手绘风格流程图",
   "scripts": {
+    "setup": "rm -rf node_modules && rm -rf ./packages/*/node_modules && pnpm i && npm run build",
+    "build": "pnpm --filter=\"./packages/**\" -r --steam build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "private": true,
@@ -11,6 +13,5 @@
     "url": "https://github.com/towersxu/rough-flow"
   },
   "author": "xutao",
-  "license": "ISC"
+  "license": "Apache-2.0"
 }
-

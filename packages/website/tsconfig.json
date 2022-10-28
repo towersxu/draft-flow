@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "downlevelIteration": true,
+    "noImplicitAny": false,
+    "module": "es2020",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "target": "es2015",
+    "maxNodeModuleJsDepth": 5,
+  },
+  "path": {
+    "src/*": ["src/*"],
+    "vite": ["node_modules/vite/dist/node/chunks/dep-*.js"],
+    "lf-rough": ["../lf-rough/es/index.js"],
+    "@vitejs/plugin-vue": ["node_modules/@vitejs/plugin-vue/dist/*"],
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+}

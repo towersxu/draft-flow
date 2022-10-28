@@ -1,0 +1,25 @@
+{
+  "name": "lf-rough",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc --module esnext --target es5 --outDir ./es -d",
+    "build:cjs": "tsc --module commonjs --target es5 --outDir ./cjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xutao",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "@logicflow/core": "^1.1.29"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0"
+  },
+  "dependencies": {
+    "roughjs": "^4.5.2"
+  }
+}

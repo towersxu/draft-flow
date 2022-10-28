@@ -8,12 +8,15 @@
     "module": "es2020",
     "moduleResolution": "node",
     "skipLibCheck": true,
-    "target": "es2015",
+    "target": "es5",
     "maxNodeModuleJsDepth": 5,
   },
-  "path": {
-    "src/*": ["src/*"],
-  },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": [
+    "src/*",
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "**/*.d.ts"
+  ]
 }

@@ -14,7 +14,7 @@ class RoughPolygonNode extends PolygonNode {
   /**
    * 设置边框样式
    */
-  public getStrokeShape () {
+  public getStrokeShape (): h.JSX.Element {
     const { model } = this.props; 
     const style = model.getNodeStyle();
     if (!this.strokePath) {
@@ -44,7 +44,7 @@ class RoughPolygonNode extends PolygonNode {
   /**
    * 设置填充内容样式
    */
-  public getFillShape () {
+  public getFillShape (): h.JSX.Element {
     const { model } = this.props; 
     const style = model.getNodeStyle();
     const { roughOption = {
@@ -69,7 +69,7 @@ class RoughPolygonNode extends PolygonNode {
       d: this.fillPath,
     })
   }
-  getShape() {
+  getShape(): h.JSX.Element {
     const { model } = this.props; 
     const { x, y, width, height } = model;
     const points = model.points.map(([x, y]) => ([x, y]))

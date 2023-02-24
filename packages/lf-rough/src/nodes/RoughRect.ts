@@ -10,7 +10,7 @@ export declare module RoughPolygon {
 }
 
 class RoughRectNode extends RectNode {
-  getShape() {
+  getShape(): h.JSX.Element {
     const { model } = this.props; 
     const { x, y } = model;
     let { width, height } = model;

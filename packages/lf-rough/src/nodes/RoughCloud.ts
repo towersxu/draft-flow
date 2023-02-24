@@ -20,14 +20,14 @@ class RoughCloudNode extends PolygonNode {
   /**
    * 设置边框样式
    */
-  public getStrokeShape () {
+  getStrokeShape(): h.JSX.Element {
     const path= 'M 1464 419 C 1440 419 1434 439 1453.2 443 C 1434 451.8 1455.6 471 1471.2 463 C 1482 479 1518 479 1530 463 C 1554 463 1554 447 1539 439 C 1554 423 1530 407 1509 415 C 1494 403 1470 403 1464 419 Z'
     const paths = pathToLfElement(path);
     return h('g', {
       transform: `matrix(1, 0, 0, 1, -1445, -390)`,
     }, paths)
   }
-  getShape() {
+  getShape(): h.JSX.Element {
     const { model } = this.props; 
     const { x, y, width, height } = model;
     const points = model.points.map(([x, y]) => ([x, y]))

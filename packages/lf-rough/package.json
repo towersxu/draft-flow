@@ -1,8 +1,10 @@
 {
   "name": "lf-rough",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
-  "main": "src/index.ts",
+  "main": "cjs/index.js",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "npm run build:esm && npm run build:cjs",
@@ -15,6 +17,12 @@
   "peerDependencies": {
     "@logicflow/core": "^1.1.29"
   },
+  "files": [
+    "es",
+    "cjs",
+    "package.json",
+    "README.md"
+  ],
   "devDependencies": {
     "typescript": "^4.6.4",
     "vite": "^3.1.0"

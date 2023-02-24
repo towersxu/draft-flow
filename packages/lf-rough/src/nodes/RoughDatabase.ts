@@ -20,7 +20,7 @@ class RoughDatabaseNode extends PolygonNode {
   /**
    * 设置边框样式
    */
-  public getStrokeShape (props) {
+  public getStrokeShape (props): h.JSX.Element {
     const style = props.model.getNodeStyle()
     return h('g', {
       transform: `matrix(1, 0, 0, 1, -1415, -330)`,
@@ -36,7 +36,7 @@ class RoughDatabaseNode extends PolygonNode {
       })
     ])
   }
-  getShape() {
+  getShape(): h.JSX.Element {
     const { model } = this.props; 
     const { x, y, width, height } = model;
     const points = model.points.map(([x, y]) => ([x, y]))

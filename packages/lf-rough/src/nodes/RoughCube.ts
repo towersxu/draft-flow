@@ -19,7 +19,7 @@ class RoughCubeNode extends PolygonNode {
   /**
    * 设置边框样式
    */
-  public getStrokeShape (props) {
+  public getStrokeShape (props): h.JSX.Element {
     let paths: h.JSX.Element[] = []
     const style = props.model.getNodeStyle()
     const path= 'M 1479 347 L 1524 368.61 L 1524 425.39 L 1479 447 L 1434 425.39 L 1434 368.61 Z'
@@ -30,7 +30,7 @@ class RoughCubeNode extends PolygonNode {
       transform: `matrix(1, 0, 0, 1, -1430, -345)`,
     }, paths)
   }
-  getShape() {
+  getShape(): h.JSX.Element {
     const { model } = this.props; 
     const { x, y, width, height } = model;
     const points = model.points.map(([x, y]) => ([x, y]))

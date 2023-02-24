@@ -2,10 +2,19 @@ import { PolygonNode, PolygonNodeModel, h } from "@logicflow/core";
 import { polygon, patternFillPolygons } from 'roughjs/bin/renderer';
 import { getRoughOption, roughOpsToPath } from "../roughUtil";
 
+export declare module RoughPolygon {
+  export interface model extends PolygonNodeModel {}
+  export interface view extends PolygonNode {}
+  export const type = 'rough-polygon'
+}
+
 class RoughPolygonNode extends PolygonNode {
   strokePath: string;
   fillPath: string;
-  private getStrokeShape () {
+  /**
+   * 设置边框样式
+   */
+  public getStrokeShape () {
     const { model } = this.props; 
     const style = model.getNodeStyle();
     if (!this.strokePath) {
@@ -32,7 +41,10 @@ class RoughPolygonNode extends PolygonNode {
       d: this.strokePath,
     })
   }
-  private getFillShape () {
+  /**
+   * 设置填充内容样式
+   */
+  public getFillShape () {
     const { model } = this.props; 
     const style = model.getNodeStyle();
     const { roughOption = {

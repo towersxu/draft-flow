@@ -4,7 +4,7 @@ import LogicFlow from '@logicflow/core'
 import '@logicflow/core/dist/style/index.css'
 import '@logicflow/extension/lib/style/index.css'
 import LfRough from 'lf-rough'
-console.log(LfRough)
+import data from './data'
 
 export default {
   setup() {
@@ -18,85 +18,30 @@ export default {
   mounted() {
     const lf = new LogicFlow({
       container: this.$refs.container,
-      // width: 1200,
-      // height: 600,
       grid: false,
-      // keyboard: true,
+      nodeTextEdit: false,
+      keyboard: {
+        enabled: true
+      },
+      multipleSelectKey: 'alt',
       plugins: [
         LfRough
       ]
     })
-    lf.render(
-      {
-        nodes: [
-          {
-            type: 'rough-rect',
-            x: 100,
-            y: 100,
-          },
-          {
-            type: 'rough-rect',
-            x: 300,
-            y: 100,
-            properties: {
-              roughOption: {
-                fillStyle: "zigzag"
-              }
-            }
-          },
-          {
-            type: 'rough-rect',
-            x: 500,
-            y: 100,
-            properties: {
-              roughOption: {
-                fillStyle: "cross-hatch"
-              }
-            }
-          },
-          {
-            type: 'rough-polygon',
-            x: 500,
-            y: 300,
-            properties: {
-              roughOption: {
-                fillStyle: "cross-hatch"
-              }
-            }
-          },
-          {
-            type: 'rough-polygon',
-            x: 300,
-            y: 300,
-            properties: {
-              roughOption: {
-                fillStyle: "zigzag"
-              }
-            }
-          },
-          {
-            type: 'rough-polygon',
-            x: 100,
-            y: 300,
-          },
-          {
-            type: 'rough-star',
-            x: 100,
-            y: 500,
-            properties: {
-              roughOption: {
-                bowing: "6",
-                strokeWidth: 1,
-                stroke: 'green',
-                fillStyle: "solid"
-              }
-            }
-          }
-        ]
-      }
-    )
+    lf.setTheme({
+      text: {
+        fontSize: 50,
+        fill: '#000'
+      },
+    })
+    lf.render(data)
+    this.lf =lf
   },
   methods: {
+    getData () {
+      const data = this.lf.getGraphData()
+      console.log(JSON.stringify(data))
+    }
   },
   components: {
   }

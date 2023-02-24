@@ -1,4 +1,6 @@
+import rough from 'roughjs';
 import { ResolvedOptions, Options, OpSet } from 'roughjs/bin/core';
+import { h } from "@logicflow/core";
 
 export const getRoughOption = (option?: Options): ResolvedOptions => {
   const defaultOption = {
@@ -50,3 +52,31 @@ export const roughOpsToPath = (drawing: OpSet, joinPaths: boolean = false): stri
   return path.trim();
 }
 
+export const pathToLfElement = (path: string, option: Options = { fill: 'none' }): h.JSX.Element[] => {
+  const svg =window.document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  const rc = rough.svg(svg);
+  const r = rc.path(path, option);
+  const paths = []
+  const svgAttributesMap = {
+    d: 'd',
+    stroke: 'stroke',
+    strokeWidth: 'stroke-width',
+    fill: 'fill',
+    markerEnd: 'marker-end',
+    markerStart: 'marker-start'
+  }
+  if (r.childNodes.length > 0) {
+    r.childNodes.forEach((item: any) => {
+      const attributes = {}
+      for (const key in svgAttributesMap) {
+        if (item.hasAttribute(svgAttributesMap[key])) {
+          attributes[key] = item.getAttribute(svgAttributesMap[key])
+        } else if (option[key]) {
+          attributes[key] = option[key]
+        }
+      }
+      paths.push(h('path', attributes))
+    })
+  }
+  return paths
+}

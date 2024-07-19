@@ -12,6 +12,9 @@
     "type": "git",
     "url": "https://github.com/towersxu/rough-flow"
   },
+  "devDependencies": {
+    "pnpm": "^8.9.0"
+  },
   "author": "xutao",
   "license": "Apache-2.0"
 }

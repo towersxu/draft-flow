@@ -15,7 +15,7 @@ class RoughPolylineEdge extends PolylineEdge {
       id,
       properties: { arrowType },
     } = model;
-    const { stroke, strokeWidth } = this.getArrowStyle();
+    const { stroke, strokeWidth } = model.getArrowStyle();
     const pathAttr = {
       stroke,
       strokeWidth,

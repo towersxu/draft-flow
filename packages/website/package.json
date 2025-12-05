@@ -9,10 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@logicflow/core": "^1.1.29",
-    "@logicflow/extension": "^1.1.29",
+    "@logicflow/core": "^2.2.0",
+    "@logicflow/extension": "^2.2.0",
     "element-plus": "^2.2.17",
-    "lf-rough": "0.0.1",
+    "lf-rough": "workspace:*",
     "vue": "^3.2.37"
   },
   "devDependencies": {

@@ -1,8 +1,8 @@
 <script lang="ts">
 import { ref } from 'vue'
 import LogicFlow from '@logicflow/core'
-import '@logicflow/core/dist/style/index.css'
-import '@logicflow/extension/lib/style/index.css'
+import '@logicflow/core/lib/index.css'
+import '@logicflow/extension/lib/index.css'
 import LfRough from 'lf-rough'
 import data from './data'
 

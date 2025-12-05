@@ -3,7 +3,7 @@ import { ResolvedOptions, Options, OpSet } from 'roughjs/bin/core';
 import { h } from "@logicflow/core";
 
 export const getRoughOption = (option?: Options): ResolvedOptions => {
-  const defaultOption = {
+  const defaultOption: ResolvedOptions = {
     maxRandomnessOffset: 2,
     roughness: 1,
     bowing: 0.85,
@@ -22,7 +22,8 @@ export const getRoughOption = (option?: Options): ResolvedOptions => {
     preserveVertices: false,
     disableMultiStroke: false,
     disableMultiStrokeFill: false,
-    seed: 1
+    seed: 1,
+    fillShapeRoughnessGain: 0.8
   }
   return {
     ...defaultOption,

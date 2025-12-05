@@ -1,5 +1,6 @@
 import { PolygonNode, PolygonNodeModel, h } from "@logicflow/core";
 import { polygon, patternFillPolygons } from 'roughjs/bin/renderer';
+import { Point } from 'roughjs/bin/geometry';
 import { getRoughOption, roughOpsToPath } from "../roughUtil";
 
 export declare module RoughPolygon {
@@ -25,7 +26,7 @@ class RoughPolygonNode extends PolygonNode {
         hachureGap: 8
       }} = model.getProperties();
       const option = getRoughOption(roughOption)
-      const points = model.points.map(([x, y]) => ([x, y]))
+      const points = model.points.map(([x, y]) => ([x, y] as Point))
       const ops = polygon(
         [
           ...points
@@ -55,7 +56,7 @@ class RoughPolygonNode extends PolygonNode {
     }} = model.getProperties();
     const option = getRoughOption(roughOption)
     if (!this.fillPath) {
-      const points = model.points.map(([x, y]) => ([x, y]))
+      const points = model.points.map(([x, y]) => ([x, y] as Point))
       const path2 = roughOpsToPath(patternFillPolygons([
         [
           ...points

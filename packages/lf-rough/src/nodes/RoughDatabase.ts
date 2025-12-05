@@ -1,7 +1,8 @@
-import { PolygonNode, PolygonNodeModel, h, PointTuple } from "@logicflow/core";
-import { NodeTextTheme } from "@logicflow/core/types/constant/DefaultTheme";
+import { PolygonNode, PolygonNodeModel, h, LogicFlow } from "@logicflow/core";
 import rough from 'roughjs';
 import { pathToLfElement } from "../roughUtil";
+
+type PointTuple = LogicFlow.PointTuple;
 
 export declare module RoughDataBase {
   export interface model extends PolygonNodeModel {}
@@ -97,7 +98,7 @@ class RoughDatabaseNodeModel extends PolygonNodeModel {
     style.fill = '#FFE6CC';
     return style;
   }
-  getTextStyle(): NodeTextTheme {
+  getTextStyle(): LogicFlow.TextNodeTheme {
     const style = super.getTextStyle();
     style.fontSize = 32;
     return style;

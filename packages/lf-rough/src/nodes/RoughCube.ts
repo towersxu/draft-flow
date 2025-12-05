@@ -1,6 +1,8 @@
-import { PolygonNode, PolygonNodeModel, h, PointTuple } from "@logicflow/core";
+import { PolygonNode, PolygonNodeModel, h, LogicFlow } from "@logicflow/core";
 import rough from 'roughjs';
 import { pathToLfElement } from "../roughUtil";
+
+type PointTuple = LogicFlow.PointTuple;
 
 export declare module RoughCube {
   export interface model extends PolygonNodeModel {}

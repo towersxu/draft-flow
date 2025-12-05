@@ -1,5 +1,4 @@
-import { PolygonNode, PolygonNodeModel, h } from "@logicflow/core";
-import { NodeTextTheme } from "@logicflow/core/types/constant/DefaultTheme";
+import { PolygonNode, PolygonNodeModel, h, LogicFlow } from "@logicflow/core";
 import rough from 'roughjs';
 import { pathToLfElement } from "../roughUtil";
 
@@ -53,7 +52,7 @@ class RoughCloudNodeModel extends PolygonNodeModel {
     }
     return style;
   }
-  getTextStyle(): NodeTextTheme {
+  getTextStyle(): LogicFlow.TextNodeTheme {
     const style = super.getTextStyle();
     style.fontSize = 20;
     style.fontWeight = 'bold';
